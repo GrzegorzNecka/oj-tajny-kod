@@ -1,8 +1,9 @@
 import "./style.css";
 
 const display = document.querySelector(".display");
-
 const keyboard = document.querySelector(".keyboard");
+//classes
+const btnKey = document.querySelector(".keyboard__button").className;
 const saveKey = document.querySelector(".keyboard__button--save").className;
 const resetKey = document.querySelector(".keyboard__button--reset").className;
 
@@ -17,10 +18,9 @@ keyboard.addEventListener("click", ({ target: { className, dataset } }) => {
       buffor = [];
       display.textContent = "";
       break;
-    case "keyboard__button":
+    case btnKey:
       buffor.push(dataset.value);
       break;
     default:
-
   }
 });
