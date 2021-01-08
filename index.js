@@ -1,17 +1,17 @@
 import "./style.css";
 
-const $ = (elem) =>  document.querySelector(elem)
+const $ = elem => document.querySelector(elem);
 
 const display = $(".display");
 const keyboard = $(".keyboard");
 //classes
-const btnKey = $(".keyboard__button").className;
+const numKey = $(".keyboard__button").className;
 const saveKey = $(".keyboard__button--save").className;
 const resetKey = $(".keyboard__button--reset").className;
 
 let buffor = [];
 
-keyboard.addEventListener("click", ({ target: { className, dataset } }) => {
+keyboard.addEventListener("click", ({ target: { className, dataset: {value} } }) => {
   switch (className) {
     case saveKey:
       display.textContent = buffor.join("");
@@ -20,8 +20,8 @@ keyboard.addEventListener("click", ({ target: { className, dataset } }) => {
       buffor = [];
       display.textContent = "";
       break;
-    case btnKey:
-      buffor.push(dataset.value);
+    case numKey:
+      buffor.push(value);
       break;
     default:
   }
