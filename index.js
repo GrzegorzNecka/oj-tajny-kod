@@ -1,13 +1,12 @@
 import "./style.css";
 
-const $ = elem => document.querySelector(elem);
 
-const display = $(".display");
-const keyboard = $(".keyboard");
+const display = document.querySelector(".display");
+const keyboard = document.querySelector(".keyboard");
 //classes
-const numKey = $(".keyboard__button").className;
-const saveKey = $(".keyboard__button--save").className;
-const resetKey = $(".keyboard__button--reset").className;
+const numKey = document.querySelector(".keyboard__button").className;
+const saveKey = document.querySelector(".keyboard__button--save").className;
+const resetKey = document.querySelector(".keyboard__button--reset").className;
 
 let buffor = [];
 
